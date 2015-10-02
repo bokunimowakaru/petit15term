@@ -1,2 +1,2 @@
-# petit15term
+# Petit Ichigo Term for Raspberry Pi
 IchigoJam用の簡易ターミナルソフトです。RaspberryPiからIchigoJamへアクセスすることが出来ます。制御コードなどの対応は行っておりません。
