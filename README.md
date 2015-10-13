@@ -16,3 +16,5 @@ IchigoJam用の簡易ターミナルソフトです。RaspberryPiからIchigoJam
 - Cygwin for Windows : CYGWIN_NT-6.1 version 2.2.1  
   (/dev/ttyS?)
   
+###関連ページ（当方のブログ）
+- http://blogs.yahoo.co.jp/bokunimowakaru/55085520.html  
