@@ -6,6 +6,7 @@ IchigoJam用の簡易ターミナルソフトです。RaspberryPiからIchigoJam
 - FDTI FT231XS
 - FDTI FT232RL
 - Silicon Labo CP2102（ふうせん Fu-sen.様からの情報）
+- Silicon Labo CP2104
 
 ###動作確認済みLinux OS
 - Raspberry Pi : Linux version 3.1
