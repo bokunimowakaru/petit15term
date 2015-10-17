@@ -21,7 +21,7 @@ IchigoJam用の簡易ターミナルソフトです。RaspberryPiからIchigoJam
   
       Pin 1 3.3V        Pin 2 5V  
       Pin 3 ----        Pin 4 ----  
-      Pin 5 ----        Pin 6 ----  
+      Pin 5 ----        Pin 6 GND  
       Pin 7 ----        Pin 8 UART TXD (to RXD on IchigoJam)  
       Pin 9 ----        Pin10 UART RXD (to RTD on IchigoJam)  
   
