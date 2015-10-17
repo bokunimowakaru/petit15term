@@ -22,7 +22,6 @@ IchigoJam用の簡易ターミナルソフトです。RaspberryPiからIchigoJam
 1. タブ「Interfaces」の「Serial」を「Disable」に設定します（シリアル端末からのログインを無効にする設定）。
 1. 設定後、「OK」をクリックすると再起動を促されるので再起動します。
 1. IchigoJamをRaspberry Piの拡張IOに接続します。
-  
       Pin 1 3.3V        Pin 2 5V  
       Pin 3 ----        Pin 4 ----  
       Pin 5 ----        Pin 6 GND  
