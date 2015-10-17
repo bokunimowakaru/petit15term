@@ -16,6 +16,14 @@ IchigoJam用の簡易ターミナルソフトです。RaspberryPiからIchigoJam
 ###動作*しない*システム
 - Cygwin for Windows : CYGWIN_NT-6.1 version 2.2.1  
   (/dev/ttyS?)
+
+###Raspberry Piの拡張IO接続方法  
+  
+  Pin 1 3.3V    Pin 2 5V  
+  Pin 3 ----    Pin 4 ----  
+  Pin 5 ----    Pin 6 ----  
+  Pin 7 ----    Pin 8 UART TXD (to RXD on IchigoJam)  
+  Pin 9 ----    Pin10 UART RXD (to RTD on IchigoJam)  
   
 ###関連ページ（当方のブログ）
 - http://blogs.yahoo.co.jp/bokunimowakaru/55085520.html  
