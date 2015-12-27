@@ -1,21 +1,21 @@
 /***********************************************************************
 Petit Ichigo Term for Raspberry Pi
 
-by ¹ñÌîÏË
+by å›½é‡Žäº˜
                    http://www.geocities.jp/bokunimowakaru/diy/ichigojam/
 
-³ÈÄ¥¥Ý¡¼¥È¤Î¥·¥ê¥¢¥ëÃ¼»Ò¤ª¤è¤ÓFTDIÀ½USB¥·¥ê¥¢¥ëÊÑ´¹¥¢¥À¥×¥¿¤ò»ÈÍÑ¤·¤Æ
-Æ°ºî³ÎÇ§¤·¤Þ¤·¤¿¡£
+æ‹¡å¼µãƒãƒ¼ãƒˆã®ã‚·ãƒªã‚¢ãƒ«ç«¯å­ãŠã‚ˆã³FTDIè£½USBã‚·ãƒªã‚¢ãƒ«å¤‰æ›ã‚¢ãƒ€ãƒ—ã‚¿ã‚’ä½¿ç”¨ã—ã¦
+å‹•ä½œç¢ºèªã—ã¾ã—ãŸã€‚
 
-TinyTerm¤«¤é¤ÎÊÑ¹¹ÅÀ
-¡¦½ªÎ»½èÍý¤ÎÄÉ²Ã¡Ö---¡×¤Ç¥¿¡¼¥ß¥Ê¥ë½ªÎ»
-¡¦µ¯Æ°»þ¤ÎÉ¸½àÆþÎÏÀßÄê¤òÊÝÂ¸¤·½ªÎ»Á°¤ËÉüµ¢¤¹¤ëµ¡Ç½¤ÎÄÉ²Ã
-¡¦µ¯Æ°µÚ¤Ó½ªÎ»»þ¹ï¤ÎÉ½¼¨µ¡Ç½¤ÎÄÉ²Ã
-¡¦USBÀÜÂ³¤ÎIchigoJam¤Ø¤ÎÂÐ±þ
-¡¦IchigoJamÍÑ¤ÎÀßÄêÊÑ¹¹¡Ê¥Ü¡¼¥ì¡¼¥È¡¦¥¨¥³¡¼¡¦²þ¹Ô¥³¡¼¥É¡Ë
+TinyTermã‹ã‚‰ã®å¤‰æ›´ç‚¹
+ãƒ»çµ‚äº†å‡¦ç†ã®è¿½åŠ ã€Œ---ã€ã§ã‚¿ãƒ¼ãƒŸãƒŠãƒ«çµ‚äº†
+ãƒ»èµ·å‹•æ™‚ã®æ¨™æº–å…¥åŠ›è¨­å®šã‚’ä¿å­˜ã—çµ‚äº†å‰ã«å¾©å¸°ã™ã‚‹æ©Ÿèƒ½ã®è¿½åŠ 
+ãƒ»èµ·å‹•åŠã³çµ‚äº†æ™‚åˆ»ã®è¡¨ç¤ºæ©Ÿèƒ½ã®è¿½åŠ 
+ãƒ»USBæŽ¥ç¶šã®IchigoJamã¸ã®å¯¾å¿œ
+ãƒ»IchigoJamç”¨ã®è¨­å®šå¤‰æ›´ï¼ˆãƒœãƒ¼ãƒ¬ãƒ¼ãƒˆãƒ»ã‚¨ã‚³ãƒ¼ãƒ»æ”¹è¡Œã‚³ãƒ¼ãƒ‰ï¼‰
 
 ************************************************************************
-²¼µ­¤Î¥½¡¼¥¹¥³¡¼¥É¤òÍøÍÑ¤·¤Þ¤·¤¿¡£
+ä¸‹è¨˜ã®ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã‚’åˆ©ç”¨ã—ã¾ã—ãŸã€‚
 
 // TinyTerm
 // serial programming example for Raspberry Pi
@@ -32,7 +32,7 @@ TinyTerm¤«¤é¤ÎÊÑ¹¹ÅÀ
 #include <time.h>
 
 #define UART_SPEED 115200
-#define UART_USB_MAX 10			// URT_USB¤ÎºÇÂç¿ô(ºÇÂçÃÍ9)
+#define UART_USB_MAX 10			// URT_USBã®æœ€å¤§æ•°(æœ€å¤§å€¤9)
 
 void log_date(char *s){
     time_t error_time;
