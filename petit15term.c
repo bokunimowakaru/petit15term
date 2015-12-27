@@ -32,7 +32,6 @@ TinyTermからの変更点
 #include <time.h>
 
 #define UART_SPEED 115200
-#define UART_USB_MAX 10			// URT_USBの最大数(最大値9)
 
 void log_date(char *s){
     time_t error_time;
@@ -133,9 +132,10 @@ int main()
 	char UART_DEVICE[15]="/dev/ttyUSB10";
 
 	printf("Petit Ichigo Term for Raspberry Pi\n");
-	for(i=UART_USB_MAX;i>=-1;i--){
-		if(i>=0) snprintf(&UART_DEVICE[8],5,"USB%1d",i);
-		else snprintf(&UART_DEVICE[8],5,"AMA0");
+	for(i=12;i>=-1;i--){
+		if(i>=10) snprintf(&UART_DEVICE[5],8,"rfcomm%1d",i-10);   // ポート探索(rfcomm0-2)
+		else if(i>=0) snprintf(&UART_DEVICE[5],8,"ttyUSB%1d",i);  // ポート探索(USB0～9)
+		else snprintf(&UART_DEVICE[5],8,"ttyAMA0");   // 拡張IOのUART端子に設定
 	//	log_date(UART_DEVICE);
 		fd = uart_open(UART_DEVICE, UART_SPEED, &uartattr);
 		if(fd >=0 ) break;
