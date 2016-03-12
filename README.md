@@ -46,7 +46,7 @@ IchigoJam用の簡易ターミナルソフトです。RaspberryPiからIchigoJam
 - http://blogs.yahoo.co.jp/bokunimowakaru/55201268.html
 
 ------------------------------------------------------------------------
-# Petit Ichigo Writer for Cygwin
+# Petit Ichigo Writer for Cygwin / Raspberry Pi
 IchigoJam用のファームウェアを連続で書き込むためのソフトウェアです。
 Cygwinで動作します。（現在、Raspberry Piには対応していません。）
 ファームウェアは下記からダウンロードします。
