@@ -81,7 +81,10 @@ Cygwinで動作します。（現在、Raspberry Piには対応していませ�
 
 ファームウェアのバージョン確認が1.1.1の時だけ、次の処理に移ります。
 指定バージョンを変更するには、実行時の第2引数に3桁の数字を付与します。
-- ./petit15writer 5 121 でバージョン1.2.1を指定できます。
+- ./petit15writer 0 121 で「121」すなわちバージョン1.2.1を指定できます。
+- ./petit15writer 5 121 でCOMポートとバージョンの両方を指定することが出来ます。
+
+以下に使用時の様子を示します。
 
 ![alt text](https://github.com/bokunimowakaru/petit15term/blob/master/README.jpg)
 
