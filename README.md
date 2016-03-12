@@ -15,7 +15,8 @@ IchigoJam用の簡易ターミナルソフトです。RaspberryPiからIchigoJam
 - Fedora （ふうせん Fu-sen.様からの情報）
 
 ###Raspberry PiやWindows PCのUSBへの接続方法  
-1. IchigoJam用プリント基板「Personal computer」のCN7にUSBシリアルアダプタを接続します。
+1. IchigoJam用プリント基板「Personal computer※」のCN7にUSBシリアルアダプタを接続します。  
+      ※CQ出版社「IchigoJam用コンピュータ電子工作学習キット(IF ICH-KIT)」に含まれる基板です
 1. USBケーブルを使ってRaspberry Piへ接続します。
 
 ###Raspberry Piの拡張IOへの接続方法  
