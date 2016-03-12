@@ -1,6 +1,7 @@
 # Petit Ichigo Term for Cygwin / Raspberry Pi
 IchigoJam用の簡易ターミナルソフトです。RaspberryPiからIchigoJamへアクセスすることが出来ます。
 制御コードなどの対応は行っておりません。  
+本ページの後半にIchigoJamのファームウェア書き込みソフトも紹介しています。
 
 ###動作確認済みUSBドライバ  
 - FDTI FT231XS
@@ -56,11 +57,12 @@ IchigoJam用の簡易ターミナルソフトです。RaspberryPiからIchigoJam
 ------------------------------------------------------------------------
 # Petit Ichigo Writer for Cygwin / Raspberry Pi
 IchigoJam用のファームウェアを連続で書き込むためのソフトウェアです。
-Cygwinで動作します。（現在、Raspberry Piには対応していません。）
-ファームウェアは下記からダウンロードします。
+CygwinまたはRaspberry Piで動作します。
+ファームウェアは下記からダウンロードしてください。
 - http://ichigojam.net/farm.html
 
-ご注意：ファームウェアの利用にはjig.jpのライセンスへの同意が必要です。販売目的でファームウェアを使用する場合はライセンス料の支払いが必要です。
+ご注意：ファームウェアの利用にはjig.jpのライセンスへの同意が必要です。
+販売目的でファームウェアを使用する場合はライセンス料の支払いが必要です。
 
 ###必要な機器
 - Windowsが動作するパソコンまたはRaspberry Pi
@@ -69,7 +71,7 @@ Cygwinで動作します。（現在、Raspberry Piには対応していませ�
 　CQ出版社「IchigoJam用コンピュータ電子工作学習キット(IF ICH-KIT)」に含まれるPersonal Computer基板が便利。
 
 ###使用方法
-- firmwareフォルダ内に「ichigojam-xtal.hex」を保存します
+- firmwareフォルダ内にファームウェア「ichigojam-xtal.hex」を保存してください。
 - Cygwinを起動してください（Raspberry Piの場合はLXTerminalを起動）
 - git clone https://github.com/bokunimowakaru/petit15term.git でダウンロードします。
 - cd petit15term でディレクトリを変更します。
@@ -81,8 +83,8 @@ Cygwinで動作します。（現在、Raspberry Piには対応していませ�
 
 ファームウェアのバージョン確認が1.1.1の時だけ、次の処理に移ります。
 指定バージョンを変更するには、実行時の第2引数に3桁の数字を付与します。
-- ./petit15writer 0 121 で「121」すなわちバージョン1.2.1を指定できます。
-- ./petit15writer 5 121 でCOMポートとバージョンの両方を指定することが出来ます。
+- ./petit15writer 0 121 で「121」すなわちバージョン1.2.1を指定することができます。
+- ./petit15writer 5 121 のようにCOMポートとバージョンの両方を指定することも出来ます。
 
 以下に使用時の様子を示します。
 
