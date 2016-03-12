@@ -142,6 +142,7 @@ int main(int argc,char **argv){
         sprintf(s,"lpc21isp/lpc21isp -verify -donotstart firmware/ichigojam-xtal.hex %s 115200 12000",ss);
         log_date(s);
         log_date("Please connect a LPC Device to your jig.");
+        log_date("LPCマイコンをボードにセットしてISPボタンを押してください");
         ret=system(s);
         sprintf(s,"lpc21isp (%d)",ret);         // 256:ファームウェア無し、2560 ユーザ終了 65280
         log_date(s);
@@ -152,6 +153,7 @@ int main(int argc,char **argv){
                 break;
             case 0:
                 log_date("SUCCESS");
+                log_date("書き込みに成功しました");
                 break;
             default:
                 log_date("エラーが発生したので終了します");
@@ -160,6 +162,7 @@ int main(int argc,char **argv){
         }
 
         log_date("Please press reset button on IchigoJam.");
+        log_date("マイコンボードのリセットボタンを押してください");
         uart_open(UART_DEVICE, &uartattr);
 
         wait=0; ok=0; ver=0;
