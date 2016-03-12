@@ -132,10 +132,11 @@ int main()
 	char UART_DEVICE[15]="/dev/ttyUSB10";
 
 	printf("Petit Ichigo Term for Raspberry Pi\n");
-	for(i=12;i>=-1;i--){
-		if(i>=10) snprintf(&UART_DEVICE[5],8,"rfcomm%1d",i-10);   // ポート探索(rfcomm0-2)
-		else if(i>=0) snprintf(&UART_DEVICE[5],8,"ttyUSB%1d",i);  // ポート探索(USB0～9)
-		else snprintf(&UART_DEVICE[5],8,"ttyAMA0");   // 拡張IOのUART端子に設定
+	for(i=22;i>=0;i--){
+		if(i>=20) snprintf(&UART_DEVICE[5],8,"rfcomm%1d",i-20);   // ポート探索(rfcomm0-2)
+		else if(i>=10) snprintf(&UART_DEVICE[5],8,"ttyUSB%1d",i-10);  // ポート探索(USB0～9)
+		else if(i==9)  snprintf(&UART_DEVICE[5],8,"ttyAMA0");   // 拡張IOのUART端子に設定
+		else snprintf(&UART_DEVICE[5],8,"ttyS%1d",i);			// Cygwin PC用
 	//	log_date(UART_DEVICE);
 		fd = uart_open(UART_DEVICE, UART_SPEED, &uartattr);
 		if(fd >=0 ) break;
@@ -177,6 +178,7 @@ int main()
 						loop++;
 						if(loop>3){
 							loop=0;
+							write(fd, "\b\b\b", 3);
 							printf("\n");
 						}
 					}else loop=1;

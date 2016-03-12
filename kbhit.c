@@ -1,11 +1,11 @@
 /*
-ƒg ƒŠ ƒb ƒL [ ƒR [ ƒh ƒl ƒb ƒg 
+ãƒˆ ãƒª ãƒƒ ã‚­ ãƒ¼ ã‚³ ãƒ¼ ãƒ‰ ãƒ ãƒƒ ãƒˆ 
 
-Linux‚ÅkbhitŠÖ”ì¬ (CŒ¾Œê)
-LinuxŠÂ‹«‚Å‚ÌCŒ¾ŒêŠJ”­‚ÅAWindows‚Å‚¢‚¤‚Æ‚±‚ë‚Ìkbhit()‚ðÄŒ»‚µ‚½ƒR[ƒh‚Å‚·B
-(¦ ‰pŒêƒTƒCƒg‚É“]‚ª‚Á‚Ä‚¢‚½ƒ\[ƒX‚ÉAˆê•”C³‚ð‰Á‚¦‚½‚à‚Ì‚Å‚·B)
+Linuxã§kbhité–¢æ•°ä½œæˆ (Cè¨€èªž)
+Linuxç’°å¢ƒã§ã®Cè¨€èªžé–‹ç™ºã§ã€Windowsã§ã„ã†ã¨ã“ã‚ã®kbhit()ã‚’å†ç¾ã—ãŸã‚³ãƒ¼ãƒ‰ã§ã™ã€‚
+(â€» è‹±èªžã‚µã‚¤ãƒˆã«è»¢ãŒã£ã¦ã„ãŸã‚½ãƒ¼ã‚¹ã«ã€ä¸€éƒ¨ä¿®æ­£ã‚’åŠ ãˆãŸã‚‚ã®ã§ã™ã€‚)
 
-EEE‚¢‚¸‚êŽg‚¤‚©‚à‚µ‚ê‚È‚¢‚Ì‚ÅAƒƒ‚‚ª‚Ä‚ç’u‚¢‚Ä‚¨‚«‚Ü‚·OOGj
+ãƒ»ãƒ»ãƒ»ã„ãšã‚Œä½¿ã†ã‹ã‚‚ã—ã‚Œãªã„ã®ã§ã€ãƒ¡ãƒ¢ãŒã¦ã‚‰ç½®ã„ã¦ãŠãã¾ã™ï¼¾ï¼¾ï¼›ï¼‰
 
 http://tricky-code.net/mine/c/mc06linuxkbhit.php
 
