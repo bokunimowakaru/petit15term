@@ -107,7 +107,8 @@ int main(int argc,char **argv){
             fd = uart_open(UART_DEVICE, &uartattr);
             com=i;
         }
-    }else for(i=22;i>=0;i--){
+    }
+    if(com==0) for(i=22;i>=0;i--){
         if(i>=20){
             snprintf(&UART_DEVICE[5],8,"rfcomm%1d",i-20);   // ポート探索(rfcomm0-2)
             com = i-20+1;
