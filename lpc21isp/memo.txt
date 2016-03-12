@@ -1,0 +1,5 @@
+IchigoJam ファームウェアの書込み方(クリスタルあり)
+com5の場合：
+
+./lpc21isp -verify ichigojam-xtal.hex com5 115200 12000
+
