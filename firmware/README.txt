@@ -1,5 +1,5 @@
-�����Ƀt�@�[���E�F�A�uichigojam-xtal.hex�v��ۑ����Ă��������B
-�t�@�[���E�F�A�͉��L����_�E�����[�h���Ahex�t�@�C����ۑ����Ă��������B
+このフォルダ（ディレクトリ）内にファームウェア「ichigojam-xtal.hex」を保存してください。
+ファームウェアは下記からダウンロードし、hexファイルを保存してください。
 - http://ichigojam.net/farm.html
 
-�����ӁF�t�@�[���E�F�A�̗��p�ɂ�jig.jp�̃��C�Z���X�ւ̓��ӂ��K�v�ł��B�̔��ړI�Ńt�@�[���E�F�A���g�p����ꍇ�̓��C�Z���X���̎x�������K�v�ł��B
+ご注意：ファームウェアの利用にはjig.jpのライセンスへの同意が必要です。販売目的でファームウェアを使用する場合はライセンス料の支払いが必要です。
