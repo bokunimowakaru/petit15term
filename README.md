@@ -58,7 +58,7 @@ Cygwinで動作します。（現在、Raspberry Piには対応していませ�
 - Windowsが動作するパソコン
 - IchigoJamプリント基板
 　(リセットとISPボタン、USBシリアル変換アダプタが必要です)  
-　IchigoJam用コンピュータ電子工作学習キット(IF ICH-KIT)に含まれるPersonal Computer基板が便利。
+　CQ出版社「IchigoJam用コンピュータ電子工作学習キット(IF ICH-KIT)」に含まれるPersonal Computer基板が便利。
 
 ###使用方法
 - firmwareフォルダ内に「ichigojam-xtal.hex」を保存します
