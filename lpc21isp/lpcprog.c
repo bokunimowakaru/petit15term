@@ -1636,6 +1636,7 @@ int NxpDownload(ISP_ENVIRONMENT *IspEnvironment)
             if (realsize == 0 || strncmp((const char *)Answer, /*cmdstr*/ExpectedAnswer, strlen(/*cmdstr*/ExpectedAnswer)) != 0)
             {
                 DebugPrintf(2, "Failed to run the new downloaded code: ");
+                fprintf(stderr,"%s (%s)",Answer,ExpectedAnswer);
                 return (FAILED_RUN + GetAndReportErrorNumber(Answer));
             }
         }

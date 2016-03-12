@@ -1,4 +1,4 @@
-# Petit Ichigo Term for Linux / Raspberry Pi
+# Petit Ichigo Term for Cygwin / Linux / Raspberry Pi
 IchigoJam用の簡易ターミナルソフトです。RaspberryPiからIchigoJamへアクセスすることが出来ます。
 制御コードなどの対応は行っておりません。  
 
@@ -27,6 +27,33 @@ IchigoJam用の簡易ターミナルソフトです。RaspberryPiからIchigoJam
       Pin 5 ----        Pin 6 GND  
       Pin 7 ----        Pin 8 UART TXD (to RXD on IchigoJam)  
       Pin 9 ----        Pin10 UART RXD (to RTD on IchigoJam)  
-  
+
+###使用方法
+- cd petit15term でディレクトリを変更します。
+- make clean all でコンパイルを行います。
+- ./petit15term で実行します。
+
 ###関連ページ（当方のブログ）
 - http://blogs.yahoo.co.jp/bokunimowakaru/55085520.html  
+
+# Petit Ichigo Writer for Cygwin
+IchigoJam用のファームウェアを連続で書き込むためのソフトウェアです。
+Cygwinで動作します。（現在、Raspberry Piには対応していません。）
+ファームウェアは下記からダウンロードします。
+- http://ichigojam.net/farm.html
+
+ご注意：ファームウェアの利用にはjig.jpのライセンスへの同意が必要です。販売目的でファームウェアを使用する場合はライセンス料の支払いが必要です。
+
+###使用方法
+- firmwareフォルダ内に「ichigojam-xtal.hex」を保存します
+- cd petit15term でディレクトリを変更します。
+- make clean all でコンパイルを行います。
+- ./petit15writer で実行します。
+
+実行時に数字を付与するとWindows PCのCOMポート番号を指定することが出来ます。
+- ./petit15writer 5 でCOM5を使用します
+
+ファームウェアのバージョン確認が1.1.1の時だけ、次の処理に移ります。
+指定バージョンを変更するには、実行時の第2引数に3桁の数字を付与します。
+- ./petit15writer 5 121 でバージョン1.2.1を指定できます。
+

@@ -25,6 +25,7 @@ TinyTermからの変更点
 ************************************************************************/
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <termios.h>
@@ -121,10 +122,9 @@ int uart_close(int fd, struct termios *saveattr)
 	return close(fd);
 }
 
-int main()
-{
+int main(int argc,char **argv){
 	fd_set readfds;
-	int fd,loop=1,i;
+	int fd=-1,loop=1,i;
 	char c;
 	struct termios stdinattr,stdin_bk;
 	struct termios uartattr;
@@ -132,7 +132,13 @@ int main()
 	char UART_DEVICE[15]="/dev/ttyUSB10";
 
 	printf("Petit Ichigo Term for Raspberry Pi\n");
-	for(i=22;i>=0;i--){
+	if( argc == 2){
+		i=atoi(argv[1]);
+		if( i>0 && i<= 64){
+			snprintf(&UART_DEVICE[5],8,"ttyS%1d",i-1);	// Cygwin PC用
+			fd = uart_open(UART_DEVICE, UART_SPEED, &uartattr);
+		}
+	}else for(i=22;i>=0;i--){
 		if(i>=20) snprintf(&UART_DEVICE[5],8,"rfcomm%1d",i-20);   // ポート探索(rfcomm0-2)
 		else if(i>=10) snprintf(&UART_DEVICE[5],8,"ttyUSB%1d",i-10);  // ポート探索(USB0～9)
 		else if(i==9)  snprintf(&UART_DEVICE[5],8,"ttyAMA0");   // 拡張IOのUART端子に設定
@@ -141,6 +147,7 @@ int main()
 		fd = uart_open(UART_DEVICE, UART_SPEED, &uartattr);
 		if(fd >=0 ) break;
 	}
+	
 	if (fd < 0){
 		log_date("ERROR @ UART OPEN");
 		return 1;
