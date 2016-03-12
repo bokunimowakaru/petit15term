@@ -1,4 +1,4 @@
-# Petit Ichigo Term for Cygwin / Linux / Raspberry Pi
+# Petit Ichigo Term for Cygwin / Raspberry Pi
 IchigoJam用の簡易ターミナルソフトです。RaspberryPiからIchigoJamへアクセスすることが出来ます。
 制御コードなどの対応は行っておりません。  
 
@@ -28,13 +28,25 @@ IchigoJam用の簡易ターミナルソフトです。RaspberryPiからIchigoJam
       Pin 7 ----        Pin 8 UART TXD (to RXD on IchigoJam)  
       Pin 9 ----        Pin10 UART RXD (to RTD on IchigoJam)  
 
+###必要な機器
+- Cygwin / Raspberry Piが動作する環境
+- IchigoJam
+- USBシリアル変換アダプタ (またはジャンパワイヤでRaspPiのUARTに接続)
+
 ###使用方法
 - cd petit15term でディレクトリを変更します。
 - make clean all でコンパイルを行います。
 - ./petit15term で実行します。
 
 ###関連ページ（当方のブログ）
-- http://blogs.yahoo.co.jp/bokunimowakaru/55085520.html  
+①ジャンパー線で接続する（配線図を追加しました）
+- http://blogs.yahoo.co.jp/bokunimowakaru/55078094.html
+
+②USBで接続する
+- http://blogs.yahoo.co.jp/bokunimowakaru/55085520.html
+
+③Bluetoothで接続する
+- http://blogs.yahoo.co.jp/bokunimowakaru/55201268.html
 
 # Petit Ichigo Writer for Cygwin
 IchigoJam用のファームウェアを連続で書き込むためのソフトウェアです。
@@ -43,6 +55,11 @@ Cygwinで動作します。（現在、Raspberry Piには対応していませ�
 - http://ichigojam.net/farm.html
 
 ご注意：ファームウェアの利用にはjig.jpのライセンスへの同意が必要です。販売目的でファームウェアを使用する場合はライセンス料の支払いが必要です。
+
+###必要な機器
+- Windowsが動作するパソコン
+- IchigoJamプリント基板
+　(リセットとISPボタン、USBシリアル変換アダプタが必要です)
 
 ###使用方法
 - firmwareフォルダ内に「ichigojam-xtal.hex」を保存します
