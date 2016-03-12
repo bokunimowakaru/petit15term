@@ -263,8 +263,8 @@ void ControlXonXoffSerialPort(ISP_ENVIRONMENT *IspEnvironment, unsigned char Xon
 
 
 #if defined COMPILE_FOR_LINUX
-#define stricmp strcasecmp
-#define strnicmp strncasecmp
+// #define stricmp strcasecmp
+// #define strnicmp strncasecmp
 #endif // defined COMPILE_FOR_LINUX
 
 #ifndef O_BINARY
