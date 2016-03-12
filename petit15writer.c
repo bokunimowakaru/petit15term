@@ -108,9 +108,13 @@ int main(int argc,char **argv){
             com=i;
         }
     }else for(i=22;i>=0;i--){
-        if(i>=20) snprintf(&UART_DEVICE[5],8,"rfcomm%1d",i-20);   // ポート探索(rfcomm0-2)
-        else if(i>=10) snprintf(&UART_DEVICE[5],8,"ttyUSB%1d",i-10);  // ポート探索(USB0～9)
-        else if(i==9)  snprintf(&UART_DEVICE[5],8,"ttyAMA0");   // 拡張IOのUART端子に設定
+        if(i>=20){
+            snprintf(&UART_DEVICE[5],8,"rfcomm%1d",i-20);   // ポート探索(rfcomm0-2)
+            com = i-20+1;
+        }else if(i>=10){
+            snprintf(&UART_DEVICE[5],8,"ttyUSB%1d",i-10);  // ポート探索(USB0～9)
+            com = i-10+1;
+        }else if(i==9) snprintf(&UART_DEVICE[5],8,"ttyAMA0");   // 拡張IOのUART端子に設定
         else{
             snprintf(&UART_DEVICE[5],8,"ttyS%1d",i);            // Cygwin PC用
             com=i+1;
@@ -124,7 +128,8 @@ int main(int argc,char **argv){
         log_date("ERROR @ UART OPEN");
         return 1;
     }else{
-        log_date(UART_DEVICE);
+        sprintf(s,"COM PORT = %s (%d)",UART_DEVICE,com);
+        log_date(s);
     }
     if(close_serial_port()){            // 一旦閉じる
         log_date("ERROR @ UART CLOSE");
@@ -132,7 +137,7 @@ int main(int argc,char **argv){
     }
     
     while(loop){
-        sprintf(s,"lpc21isp/lpc21isp -verify -donotstart firmware/ichigojam-xtal.hex com%d 115200 12000",com);
+        sprintf(s,"lpc21isp/lpc21isp -verify -donotstart firmware/ichigojam-xtal.hex %s 115200 12000",UART_DEVICE);
         log_date(s);
         log_date("Please connect a LPC Device to your jig.");
         ret=system(s);
