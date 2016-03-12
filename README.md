@@ -63,15 +63,15 @@ Cygwinで動作します。（現在、Raspberry Piには対応していませ�
 ご注意：ファームウェアの利用にはjig.jpのライセンスへの同意が必要です。販売目的でファームウェアを使用する場合はライセンス料の支払いが必要です。
 
 ###必要な機器
-- Windowsが動作するパソコン
+- Windowsが動作するパソコンまたはRaspberry Pi
 - IchigoJamプリント基板
 　(リセットとISPボタン、USBシリアル変換アダプタが必要です)  
 　CQ出版社「IchigoJam用コンピュータ電子工作学習キット(IF ICH-KIT)」に含まれるPersonal Computer基板が便利。
 
 ###使用方法
 - firmwareフォルダ内に「ichigojam-xtal.hex」を保存します
-- Cygwinを起動してください
-- git clone https://github.com/bokunimowakaru/petit15term.git でダウンロード
+- Cygwinを起動してください（Raspberry Piの場合はLXTerminalを起動）
+- git clone https://github.com/bokunimowakaru/petit15term.git でダウンロードします。
 - cd petit15term でディレクトリを変更します。
 - make clean all でコンパイルを行います。
 - ./petit15writer で実行します。
