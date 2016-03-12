@@ -17,18 +17,21 @@ IchigoJam用の簡易ターミナルソフトです。RaspberryPiからIchigoJam
 ###Raspberry PiやWindows PCのUSBへの接続方法  
 1. IchigoJam用プリント基板「Personal computer※」のCN7にUSBシリアルアダプタを接続します。  
       ※CQ出版社「IchigoJam用コンピュータ電子工作学習キット(IF ICH-KIT)」に含まれる基板です
-1. USBケーブルを使ってRaspberry Piへ接続します。
+2. USBケーブルを使ってRaspberry Piへ接続します。
+3. 電源スイッチSW1をDC IN側にします（ACアダプタは不要）。
+4. マイコンの右側の端子だけをソケットCN3に接続して電源を入れます。
 
 ###Raspberry Piの拡張IOへの接続方法  
 1. Raspberry Piの画面左上の「MENU」から「Preferences」を選択し、「Raspberry Pi Configuration」を選択して設定画面を開きます。
-1. タブ「Interfaces」の「Serial」を「Disable」に設定します（シリアル端末からのログインを無効にする設定）。
-1. 設定後、「OK」をクリックすると再起動を促されるので再起動します。
-1. IchigoJamをRaspberry Piの拡張IOに接続します。  
+2. タブ「Interfaces」の「Serial」を「Disable」に設定します（シリアル端末からのログインを無効にする設定）。
+3. 設定後、「OK」をクリックすると再起動を促されるので再起動します。
+4. IchigoJamをRaspberry Piの拡張IO（下表）に接続します。  
       Pin 1 3.3V        Pin 2 5V  
       Pin 3 ----        Pin 4 ----  
       Pin 5 ----        Pin 6 GND  
       Pin 7 ----        Pin 8 UART TXD (to RXD on IchigoJam)  
       Pin 9 ----        Pin10 UART RXD (to RTD on IchigoJam)  
+5. IchigoJam用プリント基板「Personal computer※」の場合は、CN7を利用すると良いでしょう。
 
 ###必要な機器
 - Cygwin / Raspberry Piが動作する環境
