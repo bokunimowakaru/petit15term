@@ -10,12 +10,9 @@ IchigoJam用の簡易ターミナルソフトです。RaspberryPiからIchigoJam
 
 ###動作確認済みLinux OS
 - Raspberry Pi : Linux version 3.1
+- Cygwin for Windows
 - Ubuntu （ふうせん Fu-sen.様からの情報）
 - Fedora （ふうせん Fu-sen.様からの情報）
-
-###動作*しない*システム
-- Cygwin for Windows : CYGWIN_NT-6.1 version 2.2.1  
-  (/dev/ttyS?)
 
 ###Raspberry Piの拡張IOへの接続方法  
 1. 画面左上の「MENU」から「Preferences」を選択し、「Raspberry Pi Configuration」を選択して設定画面を開きます。
