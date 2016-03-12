@@ -14,8 +14,12 @@ IchigoJam用の簡易ターミナルソフトです。RaspberryPiからIchigoJam
 - Ubuntu （ふうせん Fu-sen.様からの情報）
 - Fedora （ふうせん Fu-sen.様からの情報）
 
+###Raspberry PiやWindows PCのUSBへの接続方法  
+1. IchigoJam用プリント基板「Personal computer」のCN7にUSBシリアルアダプタを接続します。
+1. USBケーブルを使ってRaspberry Piへ接続します。
+
 ###Raspberry Piの拡張IOへの接続方法  
-1. 画面左上の「MENU」から「Preferences」を選択し、「Raspberry Pi Configuration」を選択して設定画面を開きます。
+1. Raspberry Piの画面左上の「MENU」から「Preferences」を選択し、「Raspberry Pi Configuration」を選択して設定画面を開きます。
 1. タブ「Interfaces」の「Serial」を「Disable」に設定します（シリアル端末からのログインを無効にする設定）。
 1. 設定後、「OK」をクリックすると再起動を促されるので再起動します。
 1. IchigoJamをRaspberry Piの拡張IOに接続します。  
