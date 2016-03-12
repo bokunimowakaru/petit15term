@@ -46,6 +46,8 @@ Cygwinで動作します。（現在、Raspberry Piには対応していませ�
 
 ###使用方法
 - firmwareフォルダ内に「ichigojam-xtal.hex」を保存します
+- Cygwinを起動してください
+- git clone https://github.com/bokunimowakaru/petit15term.git でダウンロード
 - cd petit15term でディレクトリを変更します。
 - make clean all でコンパイルを行います。
 - ./petit15writer で実行します。
