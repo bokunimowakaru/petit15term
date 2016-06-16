@@ -12,9 +12,8 @@ petitPanCake for Raspberry Pi
 #include <ctype.h>                                  // isprint,isdigit用
 static int ComFd;                                   // シリアル用ファイルディスクリプタ
 static struct termios ComTio_Bk;                    // 現シリアル端末設定保持用の構造体
-#define TX_WAIT 25000
-#define TXL_WAIT 250000
-
+#define TX_WAIT 0
+#define TXL_WAIT 0
 
 int open_serial_port(){
     struct termios ComTio;                          // シリアル端末設定用の構造体変数
