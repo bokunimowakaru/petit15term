@@ -15,6 +15,7 @@ static struct termios ComTio_Bk;                    // 現シリアル端末設�
 #define TX_WAIT 0
 #define TXL_WAIT 0
 
+
 int open_serial_port(){
     struct termios ComTio;                          // シリアル端末設定用の構造体変数
     speed_t speed = B115200;                        // 通信速度の設定
@@ -51,9 +52,9 @@ char read_serial_port(void){
     struct timeval tv;                              // タイムアウト値の保持用
     FD_ZERO(&ComReadFds);                           // ComReadFdの初期化
     FD_SET(ComFd, &ComReadFds);                     // ファイルディスクリプタを設定
-    tv.tv_sec=0; tv.tv_usec=10000;                  // 受信のタイムアウト設定(10ms)
+    tv.tv_sec=0; tv.tv_usec=2500;                   // 受信のタイムアウト設定(1.8ms以上)
     if(select(ComFd+1, &ComReadFds, 0, 0, &tv)) read(ComFd, &c, 1); // データを受信
-    usleep(5000);                                   // 5msの(IchigoJam処理)待ち時間
+    // usleep(5000);                                // 5msの(IchigoJam処理)待ち時間
     return c;                                       // 戻り値＝受信データ(文字変数c)
 }
 
@@ -62,9 +63,17 @@ int close_serial_port(void){
     return close(ComFd);
 }
 
+int ahex2i(char c){
+	if(c>='0' && c<='9') return c-'0';
+	if(c>='a' && c<='f') return c-'a'+10;
+	if(c>='A' && c<='F') return c-'F'+10;
+	return -1;
+}
+
 int main(int argc,char **argv){
     char s[256];                                     // 文字データ用
-    int i,loop;
+    char PC_LINE[]={0x80,0x08,0x01};
+    int i,j,k,loop;
     char c;                                         // 文字入力用の文字変数
     FILE *fp;
     
@@ -84,27 +93,32 @@ int main(int argc,char **argv){
 	        fprintf(stderr,"FILE OPEN ERROR\n");
 	        return -1;
 		}
-		printf("test\n\n");
+		
 		while(feof(fp)==0){
 			fgets(s,256,fp);
 			printf("%s",s);
-			if(strncmp(s,"?\"",2)==0){
-				for(i=2;i<255;i++){
-					if(s[i]=='\"' || s[i]=='\0' ) break;
-					write(ComFd, &s[i], 1);
-					// write(0, &s[i], 1);
-					usleep(TX_WAIT);
+			if(strncmp(s,"?\"",2)==0) j=2;
+			else if(strncmp(s,"? \"",3)==0) j=3;
+			else j=0;
+			if(strncmp(&s[j],"PC LINE",7)==0){
+				printf("(BIN)");
+				write(ComFd, PC_LINE, 3);
+				for(i=j+8;i<255;i+=3){
+					k=ahex2i(s[i]); if( k<0 ) break;
+					c=(char)ahex2i(s[i+1]); if( c<0 ) break;
+					c+=(char)(k<<4);
+					write(ComFd, &c, 1);
+				//	usleep(TX_WAIT);
 				}
-			}else{
-				for(i=0;i<255;i++){
-					if(s[i]=='\0' ) break;
-					write(ComFd, &s[i], 1);
-					// write(0, &s[i], 1);
-					usleep(TX_WAIT);
-				}
+				j=0;
+			}else for(i=j;i<255;i++){
+				if(s[i]=='\"' || s[i]=='\0' ) break;
+				write(ComFd, &s[i], 1);
+				// write(0, &s[i], 1);
+			//	usleep(TX_WAIT);
 			}
 			write(ComFd, "\r\n", 2);
-			usleep(TXL_WAIT);
+		//	usleep(TXL_WAIT);
 			c=read_serial_port();
 	        while(c){
                 if( isprint(c) ) printf("%c",c);    // 表示可能な文字の時に表示する
