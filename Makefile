@@ -1,6 +1,7 @@
 CC = gcc -Wall
 PROGS = petit15term\
-		petit15writer
+		petit15writer\
+		petitPanCake
 
 all: lpc21isp/lpc21isp $(PROGS)
 
