@@ -78,11 +78,15 @@ int main(int argc,char **argv){
 	
 	printf("petitPanCake for Raspberry Pi\n");
 	if( argc < 2){
-		fprintf(stderr,"Usage : %s input_files",argv[0]);
+		fprintf(stderr,"Usage : %s input_files\n",argv[0]);
+		fprintf(stderr,"        %s fuji.txt\n",argv[0]);
+		fprintf(stderr,"        %s pc_movie/pc*.txt\n",argv[0]);
+		fprintf(stderr,"PanCake用コマンドのファイルを入力してください。\n");
 		return -1;
 	}
 	if( argc > 2){
 		MOVIE=1; TXL_WAIT=1800;
+		printf("MOVIE mode\n");
 	}
 	if(open_serial_port() <= 0){
 		fprintf(stderr,"UART OPEN ERROR\n");
@@ -97,13 +101,14 @@ int main(int argc,char **argv){
 		
 		while(feof(fp)==0){
 			fgets(s,256,fp);
+			// printf("%s",s);
 			if(strncmp(s,"?\"",2)==0) j=2;
 			else if(strncmp(s,"? \"",3)==0) j=3;
 			else j=0;
 			if(strncmp(&s[j],"PC LINE",7)==0){
 				if(!MOVIE) printf("(BIN)%s",s);
 				write(ComFd, PC_LINE, 3);
-				for(i=j+8;i<255;i+=3){
+				for(i=j+8;i<j+23;i+=3){
 					k=ahex2i(s[i]); if( k<0 ) break;
 					c=(char)ahex2i(s[i+1]); if( c<0 ) break;
 					c+=(char)(k<<4);
